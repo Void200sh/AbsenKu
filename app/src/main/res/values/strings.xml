@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">AbsenKu</string>
+    <string name="settings">Pengaturan</string>
+
+    <!-- Main Screen -->
+    <string name="greeting_prefix">Selamat</string>
+    <string name="checkin_remaining">%1$d / %2$d</string>
+    <string name="history_title">Riwayat Terbaru</string>
+    <string name="see_all">Lihat Semua →</string>
+
+    <!-- Check-in Screen -->
+    <string name="checkin_title">Check In</string>
+    <string name="checkout_title">Check Out</string>
+    <string name="capture_instruction">Arahkan kamera ke wajah Anda</string>
+    <string name="tap_to_capture">Tap untuk ambil foto</string>
+    <string name="retake">Ulangi</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="processing">Memproses…</string>
+
+    <!-- Status -->
+    <string name="status_hadir">Hadir</string>
+    <string name="status_belum">Belum</string>
+    <string name="status_selesai">Selesai</string>
+
+    <!-- Errors -->
+    <string name="error_camera_permission">Izin kamera diperlukan untuk check-in</string>
+    <string name="error_network">Tidak ada koneksi internet. Data akan disimpan offline.</string>
+    <string name="error_generic">Terjadi kesalahan. Silakan coba lagi.</string>
+
+    <!-- Offline indicator -->
+    <string name="offline_banner">Mode Offline — Data tersimpan lokal</string>
+
+    <!-- Empty state -->
+    <string name="empty_history">Belum ada riwayat presensi</string>
+    <string name="empty_history_hint">Check-in pertama Anda akan muncul di sini</string>
+
+    <!-- Loading -->
+    <string name="loading">Memuat…</string>
+</resources>

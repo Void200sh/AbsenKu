@@ -1,0 +1,117 @@
+<resources>
+    <!-- Base theme - Dark Neon Glass (Dark Mode First) -->
+    <style name="Base.Theme.AbsenKu" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- System bars -->
+        <item name="android:statusBarColor">@color/bg_primary</item>
+        <item name="android:navigationBarColor">@color/bg_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <!-- Surfaces -->
+        <item name="colorSurface">@color/bg_card</item>
+        <item name="colorSurfaceContainer">@color/bg_card_elevated</item>
+        <item name="colorSurfaceContainerHigh">@color/bg_card_elevated</item>
+
+        <!-- Accent -->
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryContainer">@color/accent_dark</item>
+        <item name="colorOnPrimary">@color/text_on_accent</item>
+        <item name="colorOnPrimaryContainer">@color/text_on_accent</item>
+
+        <item name="colorSecondary">@color/accent_light</item>
+        <item name="colorSecondaryContainer">@color/accent_dark</item>
+        <item name="colorOnSecondary">@color/text_on_accent</item>
+        <item name="colorOnSecondaryContainer">@color/text_on_accent</item>
+
+        <!-- Background -->
+        <item name="colorBackground">@color/bg_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/danger</item>
+        <item name="colorErrorContainer">@color/danger_bg</item>
+        <item name="colorOnError">@color/text_on_accent</item>
+        <item name="colorOnErrorContainer">@color/danger</item>
+
+        <!-- Outline -->
+        <item name="colorOutline">@color/line_divider</item>
+        <item name="colorOutlineVariant">@color/line_subtle</item>
+
+        <!-- Text -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+
+        <!-- Shape -->
+        <item name="shapeAppearanceCornerSmall">@style/Shape.App.Small</item>
+        <item name="shapeAppearanceCornerMedium">@style/Shape.App.Medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/Shape.App.Large</item>
+
+        <!-- Elevation overlays for dark mode -->
+        <item name="elevationOverlayEnabled">true</item>
+    </style>
+
+    <style name="Theme.AbsenKu" parent="Base.Theme.AbsenKu" />
+
+    <!-- Shape appearances -->
+    <style name="Shape.App.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="Shape.App.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="Shape.App.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="Shape.App.Circle" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- CTA Button style (full-width pill) -->
+    <style name="Widget.AbsenKu.CTA" parent="Widget.Material3.Button.ElevatedButton">
+        <item name="cornerRadius">28dp</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/accent</item>
+        <item name="rippleColor">@color/accent_light</item>
+    </style>
+
+    <!-- Glass Card style -->
+    <style name="Widget.AbsenKu.GlassCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/glass_bg</item>
+        <item name="strokeColor">@color/glass_border</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <!-- Input style -->
+    <style name="Widget.AbsenKu.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/bg_input</item>
+        <item name="boxStrokeColor">@color/line_subtle</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeColorFocused">@color/accent</item>
+        <item name="hintTextColor">@color/text_muted</item>
+        <item name="android:textColorHint">@color/text_muted</item>
+    </style>
+
+    <!-- Status chip -->
+    <style name="Widget.AbsenKu.StatusChip" parent="Widget.Material3.Chip.Entry">
+        <item name="chipCornerRadius">999dp</item>
+        <item name="chipMinHeight">24dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+</resources>

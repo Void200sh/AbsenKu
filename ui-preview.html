@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>AbsenKu — UI Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --accent: #4F46E5;
+  --accent-light: #EEF0FF;
+  --accent-dark: #3730A3;
+  --bg: #F6F7F9;
+  --card: #FFFFFF;
+  --text-1: #1A1A1A;
+  --text-2: #8A8A8E;
+  --line: #EFEFF0;
+  --ok: #1B7A43;
+  --danger: #E0453A;
+  --radius: 16px;
+  --pad: 16px;
+  --gap: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #f0f0f0; padding: 40px 20px; }
+h2 { font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); margin-bottom: 24px; text-align: center; }
+.frame { width: 390px; height: 844px; background: var(--bg); border-radius: 32px; box-shadow: 0 20px 60px rgba(0,0,0,.15), 0 0 0 1px rgba(0,0,0,.05); margin: 0 auto 40px; overflow: hidden; position: relative; }
+.frame::before { content: ''; position: absolute; top: 16px; left: 50%; transform: translateX(-50%); width: 120px; height: 5px; background: #ddd; border-radius: 3px; z-index: 10; }
+.status-bar { height: 48px; background: var(--card); display: flex; align-items: center; justify-content: space-between; padding: 0 16px; font-size: 13px; font-weight: 600; color: var(--text-1); }
+.top-bar { height: 56px; background: var(--card); display: flex; align-items: center; justify-content: space-between; padding: 0 16px; border-bottom: 1px solid var(--line); }
+.top-bar h1 { font-size: 17px; font-weight: 600; color: var(--text-1); }
+.icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; color: var(--text-2); }
+.content { padding: var(--pad); padding-bottom: 100px; }
+.overline { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); margin-bottom: 8px; }
+.greeting { font-size: 20px; font-weight: 700; color: var(--text-1); margin-bottom: 4px; }
+.subtitle { font-size: 13px; color: var(--text-2); margin-bottom: 24px; }
+.stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); margin-bottom: 24px; }
+.stat-card { background: var(--card); border-radius: var(--radius); padding: var(--pad); border: 1px solid var(--line); }
+.stat-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); margin-bottom: 4px; }
+.stat-value { font-size: 18px; font-weight: 700; color: var(--text-1); }
+.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.section-title { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); }
+.btn-ghost { background: none; border: none; color: var(--accent); font-size: 13px; font-weight: 600; padding: 4px 8px; border-radius: 8px; }
+.list { display: flex; flex-direction: column; gap: 8px; }
+.list-item { background: var(--card); border-radius: var(--radius); padding: 14px 16px; border: 1px solid var(--line); display: flex; align-items: center; gap: 12px; }
+.item-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--accent-light); color: var(--accent); }
+.item-info { flex: 1; min-width: 0; }
+.item-title { font-size: 16px; font-weight: 600; color: var(--text-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.item-meta { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+.item-status { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+.status-hadir { background: rgba(27,122,67,.12); color: var(--ok); }
+.status-belum { background: rgba(224,69,58,.12); color: var(--danger); }
+.cta-dock { position: fixed; bottom: 0; left: 0; right: 0; background: var(--card); padding: 16px; border-top: 1px solid var(--line); box-shadow: 0 -4px 20px rgba(0,0,0,.05); }
+.btn-cta { width: 100%; height: 56px; border-radius: 28px; border: none; background: var(--accent); color: white; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+/* Design 2 overrides */
+.frame-2 { --accent: #4F46E5; --bg: #F6F7F9; --card: #FFFFFF; }
+.frame-2 .top-bar { background: var(--accent); color: white; }
+.frame-2 .top-bar h1, .frame-2 .icon { color: white; }
+.frame-2 .stat-card { background: var(--accent); color: white; border: none; }
+.frame-2 .stat-label, .frame-2 .stat-value { color: white; }
+.frame-2 .list-item { background: var(--card); }
+.frame-2 .item-icon { background: var(--accent-light); }
+.frame-2 .cta-dock { background: var(--card); }
+.frame-2 .btn-cta { background: var(--accent); }
+
+/* Design 3 overrides (dark) */
+.frame-3 { --accent: #4F46E5; --bg: #121214; --card: #1E1E20; --text-1: #F2F2F4; --text-2: #9A9AA0; --line: #2A2A2E; --accent-light: #312E81; }
+.frame-3 .top-bar { background: var(--card); border-bottom: 1px solid var(--line); }
+.frame-3 .stat-card { background: var(--card); border: 1px solid var(--line); }
+.frame-3 .item-icon { background: var(--accent-light); color: var(--accent); }
+.frame-3 .list-item { background: var(--card); border: 1px solid var(--line); }
+.frame-3 .cta-dock { background: var(--card); border-top: 1px solid var(--line); }
+.frame-3 .btn-cta { background: var(--accent); }
+</style>
+</head>
+<body>
+<h2>①  Soft Pastel Cards — Friendly & Calm</h2>
+<div class="frame">
+<div class="status-bar"><span>09:41</span><span>🔋 100%</span></div>
+<div class="top-bar"><span class="icon">☰</span><h1>AbsenKu</h1><span class="icon">⚙️</span></div>
+<div class="content">
+<div class="overline">Selamat Pagi</div>
+<div class="greeting">void200</div>
+<div class="subtitle">Hari ini belum check-in. Yuk mulai hari dengan semangat!</div>
+<div class="stat-row">
+<div class="stat-card"><div class="stat-label">Hari Ini</div><div class="stat-value">0 / 2</div></div>
+<div class="stat-card"><div class="stat-label">Bulan Ini</div><div class="stat-value">18 / 44</div></div>
+</div>
+<div class="section-header"><span class="section-title">Riwayat Terbaru</span><button class="btn-ghost">Lihat Semua →</button></div>
+<div class="list">
+<div class="list-item"><div class="item-icon">📸</div><div class="item-info"><div class="item-title">Check-in Pagi</div><div class="item-meta">07:32 • Kantor Pusat</div></div><span class="item-status status-hadir">Hadir</span></div>
+<div class="list-item"><div class="item-icon">📸</div><div class="item-info"><div class="item-title">Check-out Sore</div><div class="item-meta">17:15 • Kantor Pusat</div></div><span class="item-status status-hadir">Selesai</span></div>
+<div class="list-item"><div class="item-icon">📸</div><div class="item-info"><div class="item-title">Check-in Pagi</div><div class="item-meta">Kemarin 07:45 • Kantor Pusat</div></div><span class="item-status status-hadir">Hadir</span></div>
+</div>
+</div>
+<div class="cta-dock"><button class="btn-cta">📷 Check In Sekarang</button></div>
+</div>
+
+<h2>②  Bold Color-Block — High Contrast & Focus</h2>
+<div class="frame frame-2">
+<div class="status-bar"><span>09:41</span><span>🔋 100%</span></div>
+<div class="top-bar"><span class="icon">☰</span><h1>AbsenKu</h1><span class="icon">⚙️</span></div>
+<div class="content">
+<div class="overline">SELAMAT DATANG</div>
+<div class="greeting" style="color:white">void200</div>
+<div class="subtitle" style="color:rgba(255,255,255,.8)">Check-in harian — cepat & akurat</div>
+<div class="stat-row">
+<div class="stat-card"><div class="stat-label">HARI INI</div><div class="stat-value">0 / 2</div></div>
+<div class="stat-card"><div class="stat-label">BULAN INI</div><div class="stat-value">18 / 44</div></div>
+</div>
+<div class="section-header"><span class="section-title" style="color:var(--text-2)">RIWAYAT</span><button class="btn-ghost" style="color:rgba(255,255,255,.9)">Lihat Semua →</button></div>
+<div class="list">
+<div class="list-item"><div class="item-icon">📸</div><div class="item-info"><div class="item-title">Check-in Pagi</div><div class="item-meta">07:32 • Kantor Pusat</div></div><span class="item-status status-hadir">Hadir</span></div>
+<div class="list-item"><div class="item-icon">📸</div><div class="item-info"><div class="item-title">Check-out Sore</div><div class="item-meta">17:15 • Kantor Pusat</div></div><span class="item-status status-hadir">Selesai</span></div>
+<div class="list-item"><div class="item-icon">📸</div><div class="item-info"><div class="item-title">Check-in Pagi</div><div class="item-meta">Kemarin 07:45 • Kantor Pusat</div></div><span class="item-status status-hadir">Hadir</span></div>
+</div>
+</div>
+<div class="cta-dock"><button class="btn-cta">📷 CHECK IN</button></div>
+</div>
+
+<h2>③  Dark Neon Glass — Modern & Sleek</h2>
+<div class="frame frame-3">
+<div class="status-bar"><span>09:41</span><span>🔋 100%</span></div>
+<div class="top-bar"><span class="icon">☰</span><h1>AbsenKu</h1><span class="icon">⚙️</span></div>
+<div class="content">
+<div class="overline">DASHBOARD</div>
+<div class="greeting">void200</div>
+<div class="subtitle">Presensi harian dengan verifikasi foto</div>
+<div class="stat-row">
+<div class="stat-card"><div class="stat-label">HARI INI</div><div class="stat-value">0 / 2</div></div>
+<div class="stat-card"><div class="stat-label">BULAN INI</div><div class="stat-value">18 / 44</div></div>
+</div>
+<div class="section-header"><span class="section-title">RIWAYAT</span><button class="btn-ghost">Lihat Semua →</button></div>
+<div class="list">
+<div class="list-item"><div class="item-icon">📸</div><div class="item-info"><div class="item-title">Check-in Pagi</div><div class="item-meta">07:32 • Kantor Pusat</div></div><span class="item-status status-hadir">Hadir</span></div>
+<div class="list-item"><div class="item-icon">📸</div><div class="item-info"><div class="item-title">Check-out Sore</div><div class="item-meta">17:15 • Kantor Pusat</div></div><span class="item-status status-hadir">Selesai</span></div>
+<div class="list-item"><div class="item-icon">📸</div><div class="item-info"><div class="item-title">Check-in Pagi</div><div class="item-meta">Kemarin 07:45 • Kantor Pusat</div></div><span class="item-status status-hadir">Hadir</span></div>
+</div>
+</div>
+<div class="cta-dock"><button class="btn-cta">📷 CHECK IN</button></div>
+</div>
+</body>
+</html>
