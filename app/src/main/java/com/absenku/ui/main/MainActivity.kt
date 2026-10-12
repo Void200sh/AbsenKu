@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
 }
 
 class HistoryAdapter : androidx.recyclerview.widget.ListAdapter<AttendanceRecord, HistoryAdapter.ViewHolder>(
-    androidx.recyclerview.widget.DiffUtil.ItemCallback<AttendanceRecord>() {
+    object : androidx.recyclerview.widget.DiffUtil.ItemCallback<AttendanceRecord>() {
         override fun areItemsTheSame(oldItem: AttendanceRecord, newItem: AttendanceRecord): Boolean =
             oldItem.id == newItem.id
 
