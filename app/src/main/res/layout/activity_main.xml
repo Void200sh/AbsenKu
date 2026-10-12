@@ -234,15 +234,18 @@
     </androidx.core.widget.NestedScrollView>
 
     <!-- Offline Banner -->
-    <com.google.android.material.banner.MaterialBanner
+    <TextView
         android:id="@+id/offlineBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:visibility="gone"
-        app:bannerText="@string/offline_banner"
-        app:contentBackgroundColor="@color/warning_bg"
-        app:singleLine="true" />
+        android:background="@color/warning_bg"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="@string/offline_banner"
+        android:textColor="@color/warning"
+        android:textSize="13sp"
+        android:visibility="gone" />
 
     <!-- Bottom CTA Dock -->
     <com.google.android.material.button.MaterialButton
