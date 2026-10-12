@@ -24,7 +24,7 @@
         <item name="colorOnSecondaryContainer">@color/text_on_accent</item>
 
         <!-- Background -->
-        <item name="colorBackground">@color/bg_primary</item>
+        <item name="android:colorBackground">@color/bg_primary</item>
         <item name="colorOnBackground">@color/text_primary</item>
 
         <!-- Error -->
@@ -70,7 +70,7 @@
 
     <style name="Shape.App.Circle" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
+        <item name="cornerSize">40dp</item>
     </style>
 
     <!-- CTA Button style (full-width pill) -->
@@ -100,13 +100,12 @@
         <item name="boxStrokeColor">@color/line_subtle</item>
         <item name="boxStrokeWidth">1dp</item>
         <item name="boxStrokeWidthFocused">2dp</item>
-        <item name="boxStrokeColorFocused">@color/accent</item>
         <item name="hintTextColor">@color/text_muted</item>
         <item name="android:textColorHint">@color/text_muted</item>
     </style>
 
-    <!-- Status chip -->
-    <style name="Widget.AbsenKu.StatusChip" parent="Widget.Material3.Chip.Entry">
+    <!-- Status chip (applied to TextView) -->
+    <style name="Widget.AbsenKu.StatusChip">
         <item name="chipCornerRadius">999dp</item>
         <item name="chipMinHeight">24dp</item>
         <item name="android:textSize">11sp</item>
