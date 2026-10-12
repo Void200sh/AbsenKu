@@ -16,6 +16,7 @@ import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import com.absenku.R
 import com.absenku.databinding.ActivityCheckInBinding
 import com.google.common.util.concurrent.ListenableFuture
 import java.util.concurrent.ExecutorService

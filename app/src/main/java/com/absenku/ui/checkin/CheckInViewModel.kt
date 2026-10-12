@@ -18,7 +18,7 @@ import java.util.concurrent.Executors
 class CheckInViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = AttendanceRepository(
-        com.absenku.AbenKuApplication.instance.database.attendanceDao(),
+        com.absenku.AbsenKuApplication.instance.database.attendanceDao(),
         application
     )
 
@@ -54,7 +54,7 @@ class CheckInViewModel(application: Application) : AndroidViewModel(application)
     fun capturePhoto(): File {
         val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
         val imageFile = File(
-            getApplication().getExternalFilesDir(android.os.Environment.DIRECTORY_PICTURES),
+            getApplication<Application>().getExternalFilesDir(android.os.Environment.DIRECTORY_PICTURES),
             "ABSENKU_${timeStamp}.jpg"
         )
         return imageFile

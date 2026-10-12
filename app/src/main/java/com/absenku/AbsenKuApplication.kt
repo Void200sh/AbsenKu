@@ -13,8 +13,6 @@ import java.util.concurrent.TimeUnit
 class AbsenKuApplication : Application() {
 
     companion object {
-        @Suppress("NOTHING_TO_INLINE")
-        inline fun <reified T> getService(): T = instance.getService()
         lateinit var instance: AbsenKuApplication
     }
 

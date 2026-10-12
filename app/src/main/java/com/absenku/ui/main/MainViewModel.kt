@@ -4,23 +4,23 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
+import androidx.lifecycle.map
 import com.absenku.data.AttendanceRecord
 import com.absenku.data.AttendanceRepository
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = AttendanceRepository(
-        com.absenku.AbenKuApplication.instance.database.attendanceDao(),
+        com.absenku.AbsenKuApplication.instance.database.attendanceDao(),
         application
     )
 
     val allRecords: LiveData<List<AttendanceRecord>> = repository.allRecords
     val todayRecords: LiveData<List<AttendanceRecord>> = repository.todayRecords
-    val todayStats = Transformations.map(repository.getTodayStats()) { pair ->
+    val todayStats = repository.getTodayStats().map { pair ->
         "${pair.first} / ${pair.second + pair.first}"
     }
-    val monthStats = Transformations.map(repository.getMonthStats()) { pair ->
+    val monthStats = repository.getMonthStats().map { pair ->
         "${pair.first} / ${pair.second + pair.first}"
     }
 

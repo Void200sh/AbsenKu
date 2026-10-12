@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.absenku.R
 import com.absenku.data.AttendanceRecord
 import com.absenku.databinding.ActivityMainBinding
 import com.absenku.ui.checkin.CheckInActivity
@@ -91,7 +92,7 @@ class MainActivity : AppCompatActivity() {
 }
 
 class HistoryAdapter : androidx.recyclerview.widget.ListAdapter<AttendanceRecord, HistoryAdapter.ViewHolder>(
-    androidx.recyclerview.widget.DiffUtil.ItemCallback<AttendanceRecord> {
+    androidx.recyclerview.widget.DiffUtil.ItemCallback<AttendanceRecord>() {
         override fun areItemsTheSame(oldItem: AttendanceRecord, newItem: AttendanceRecord): Boolean =
             oldItem.id == newItem.id
 
